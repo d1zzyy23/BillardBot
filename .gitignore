@@ -1,0 +1,61 @@
+# Rider-specific
+.idea/
+.idea_modules/
+*.sln.iml
+*.csproj.user
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Auto-generated files
+bin/
+obj/
+out/
+.vscode/
+
+# Logs and debug
+*.log
+*.stackdump
+*.pidb
+*.mdb
+*.opendb
+
+# Build artifacts
+*.dll
+*.exe
+*.pdb
+*.app
+*.ipa
+*.dSYM.zip
+*.dSYM
+*.so
+*.a
+*.o
+*.ko
+*.elf
+
+# Rider caches
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+.idea/vcs.xml
+.idea/jsLibraryMappings.xml
+.idea/modules.xml
+.idea/.rider/
+.idea/dataSources/
+.idea/dataSources.ids/
+.idea/sqlDataSources.xml
+.idea/dynamic.xml
+.idea/dataSources.local.xml
+.idea/gradle.xml
+.idea/libraries
+.idea/jarRepositories.xml
+.idea/kotlinc.xml
+
+# File-based project format
+*.iws
+*.ipr
+
+# User-specific files
+*.sln.ide
