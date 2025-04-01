@@ -15,6 +15,37 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
+    <SplitView CompactPaneLength="35"
+               DisplayMode="CompactInline"
+               OpenPaneLength="100"
+               Background="Aqua"
+               IsPaneOpen="{Binding IsPaneOpen}">
+        
+        <SplitView.Pane>
+            <Border Padding="5">
+                <Grid RowDefinitions="Auto, 15, Auto, *, Auto">
+                    <Button FontSize="10"
+                            Command="{Binding TriggerPaneCommand}"
+                            HorizontalAlignment="Center"
+                            >-</Button>
+                    <StackPanel Grid.Row="2">
+                        <Button FontSize="10"
+                                Command="{Binding ChangePageCommand}"
+                                CommandParameter="Home"
+                                HorizontalAlignment="Center"
+                                >Home</Button>
+                        <Button FontSize="10"
+                                Command="{Binding ChangePageCommand}"
+                                CommandParameter="Tournament"
+                                HorizontalAlignment="Center"
+                                >Generator</Button>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </SplitView.Pane>
+        <SplitView.Content>
+            <ContentControl Content="{Binding CurrentPage}"></ContentControl>
+        </SplitView.Content>
+    </SplitView>
+    
 </Window>
