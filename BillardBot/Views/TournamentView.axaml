@@ -7,14 +7,32 @@
              x:Class="BillardBot.Views.TournamentView"
              x:DataType="viewModels:TournamentViewModel">
     <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
         <viewModels:TournamentViewModel/>
     </Design.DataContext>
     
     <Grid RowDefinitions="Auto,*">
         <StackPanel>
             <Button Content="Load Matches" Command="{Binding GenerateCommand}" Margin="10" />
+            <ListBox ItemsSource="{Binding Matches}" Height="400">
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Columns="4"/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+    
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Expander Header="{Binding Number, StringFormat='Match {0}'}" VerticalAlignment="Top" HorizontalAlignment="Stretch">
+                            <StackPanel>
+                                <TextBlock Text="{Binding Pair1Players}" FontSize="12" Padding="2" HorizontalAlignment="Center"/>
+                                <TextBlock Text="{Binding Pair2Players}" FontSize="12" Padding="2" HorizontalAlignment="Center" />
+                                <TextBlock Text="{Binding Pair3Players}" FontSize="12" Padding="2" HorizontalAlignment="Center" />
+                            </StackPanel>
+                        </Expander>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
         </StackPanel>
+        
     </Grid>
 </UserControl>
